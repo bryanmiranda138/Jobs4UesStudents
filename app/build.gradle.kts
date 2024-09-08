@@ -9,11 +9,11 @@ plugins {
 }
 
 android {
-    namespace = "com.unichamba"
+    namespace = "com.unichamba1"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.unichamba"
+        applicationId = "com.unichamba1"
         minSdk = 24
         targetSdk = 34
         versionCode = 3

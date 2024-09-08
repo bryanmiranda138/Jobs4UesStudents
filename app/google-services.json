@@ -1,41 +1,42 @@
 {
   "project_info": {
-    "project_number": "139568571677",
-    "project_id": "unichamba-ues",
-    "storage_bucket": "unichamba-ues.appspot.com"
+    "project_number": "928595733049",
+    "firebase_url": "https://unichamba-app-default-rtdb.firebaseio.com",
+    "project_id": "unichamba-app",
+    "storage_bucket": "unichamba-app.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:139568571677:android:ffddb55cb11afef4c4edf4",
+        "mobilesdk_app_id": "1:928595733049:android:0d60f20dbc2b1aa59fbbe8",
         "android_client_info": {
-          "package_name": "com.unichamba"
+          "package_name": "com.jobs4uesstudentsdsi2"
         }
       },
       "oauth_client": [
         {
-          "client_id": "139568571677-f91mfftd9eq2lrdmqln3uj3rdaanbpsp.apps.googleusercontent.com",
+          "client_id": "928595733049-3h2vhpbinupsh6nnv89nhdbcf5ldmh19.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.unichamba",
-            "certificate_hash": "768595dae788b30619f393198639a38654c134e7"
+            "package_name": "com.jobs4uesstudentsdsi2",
+            "certificate_hash": "68fb13317d27f43081baf6237adf7ee8a3e2285d"
           }
         },
         {
-          "client_id": "139568571677-tdhbm1vrbs6dfinj3fd9f7efe659k56d.apps.googleusercontent.com",
+          "client_id": "928595733049-6u956spq0t0f0m838j35me6beuvpcdeu.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCjFqpzIeUstoJlQIkEqHsa5GalWZ1FJtc"
+          "current_key": "AIzaSyDfFceUFCBg2E8h1Qa7tWkEkuB4PsfsTGc"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "139568571677-tdhbm1vrbs6dfinj3fd9f7efe659k56d.apps.googleusercontent.com",
+              "client_id": "928595733049-6u956spq0t0f0m838j35me6beuvpcdeu.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
@@ -44,27 +45,35 @@
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "1:139568571677:android:ab0064aa743cc728c4edf4",
+        "mobilesdk_app_id": "1:928595733049:android:77c8d51f21249f659fbbe8",
         "android_client_info": {
-          "package_name": "net.unichamba"
+          "package_name": "com.unichamba1"
         }
       },
       "oauth_client": [
         {
-          "client_id": "139568571677-tdhbm1vrbs6dfinj3fd9f7efe659k56d.apps.googleusercontent.com",
+          "client_id": "928595733049-a0aeu6fm8ei4ijb3886h3n2ok4lllbr1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.unichamba1",
+            "certificate_hash": "68fb13317d27f43081baf6237adf7ee8a3e2285d"
+          }
+        },
+        {
+          "client_id": "928595733049-6u956spq0t0f0m838j35me6beuvpcdeu.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCjFqpzIeUstoJlQIkEqHsa5GalWZ1FJtc"
+          "current_key": "AIzaSyDfFceUFCBg2E8h1Qa7tWkEkuB4PsfsTGc"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "139568571677-tdhbm1vrbs6dfinj3fd9f7efe659k56d.apps.googleusercontent.com",
+              "client_id": "928595733049-6u956spq0t0f0m838j35me6beuvpcdeu.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
