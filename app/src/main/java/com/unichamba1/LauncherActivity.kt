@@ -26,7 +26,7 @@ class LauncherActivity : AppCompatActivity() {
             }
         } else {
             // Si el usuario no ha iniciado sesión, redirigirlo a la pantalla de inicio de sesión
-            startActivity(Intent(this, MainActivity::class.java))
+            startActivity(Intent(this, MainActivity2::class.java))
         }
         finish()
     }

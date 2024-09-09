@@ -43,6 +43,7 @@ class OpcionesLogin : AppCompatActivity() {
         progressDialog.setCanceledOnTouchOutside(false)
 
         firebaseAuth=FirebaseAuth.getInstance()
+        //firebaseAuth.getCurrentUser();
         comprobarSesion()
 
         val gso=GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -101,14 +102,23 @@ class OpcionesLogin : AppCompatActivity() {
                 .addOnSuccessListener { authResult ->
                     val firebaseUser = firebaseAuth.currentUser
                     val email = firebaseUser!!.email
-                    // Verificar si el correo electrónico cumple con el formato de empleado
-                    if (email!!.matches(Regex("^[a-zA-Z]+\\.[a-zA-Z]+@ues\\.edu\\.sv$"))) {
-                        // Enviar una alerta al usuario si es empleado
-                        //Toast.makeText(this@OpcionesLogin, "Inicio de sesión fallido,dirígete al registro del reclutador si deseas ingresar de esa forma", Toast.LENGTH_SHORT).show()
-                        startActivity(Intent(this@OpcionesLogin, MainActivityR::class.java))
-                    } else {
-                        // Redirigir a MainActivity si no es empleado
-                        startActivity(Intent(this@OpcionesLogin, MainActivity::class.java))
+                    when {
+                        email!!.matches(Regex("[a-z]+[0-9]+@ues\\.edu\\.sv")) -> {
+                            // Redirigir a MainActivity si es estudiante
+                            startActivity(Intent(this@OpcionesLogin, MainActivity::class.java))
+                        }
+                        email.matches(Regex("[a-z]+\\.[a-z]+@ues\\.edu\\.sv")) -> {
+                            // Redirigir a MainActivityR si es empleado
+                            startActivity(Intent(this@OpcionesLogin, MainActivityR::class.java))
+                        }
+                        email.endsWith("@gmail.com") -> {
+                            // Redirigir a MainActivity2 si es un correo de Gmail
+                            startActivity(Intent(this@OpcionesLogin, MainActivity2::class.java))
+                        }
+                        else -> {
+                            // Manejar cualquier otro caso, opcionalmente puedes redirigir a una pantalla de error o de información
+                            Toast.makeText(this@OpcionesLogin, "Correo no válido para el acceso", Toast.LENGTH_SHORT).show()
+                        }
                     }
                     finish()
                 }

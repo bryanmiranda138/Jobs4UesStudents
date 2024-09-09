@@ -3,6 +3,7 @@ package com.unichamba1
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.view.MenuItem
 import android.widget.Button
 import android.widget.ImageView
@@ -87,8 +88,7 @@ class OfertaDetalleActivity : AppCompatActivity() {
 
 
     private fun esEstudiante(email: String?): Boolean {
-        // Verifica si el correo electrónico contiene un punto y termina con "@ues.edu.sv"
-        return email?.contains(".") == true && email.endsWith("@ues.edu.sv")
+        return email?.endsWith("@ues.edu.sv")== true
     }
    private fun openWhatsApp() {
 
