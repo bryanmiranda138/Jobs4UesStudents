@@ -33,6 +33,7 @@ class MainActivity : AppCompatActivity(),FragmentInicio.OnVerOfertasClickListene
         setContentView(binding.root)
 
         firebaseAuth = FirebaseAuth.getInstance()
+        comprobarSesion()
 
 
 
@@ -129,6 +130,7 @@ class MainActivity : AppCompatActivity(),FragmentInicio.OnVerOfertasClickListene
         } else {
             // Si el usuario no ha iniciado sesión, redirigirlo a la pantalla de inicio de sesión
             startActivity(Intent(this, OpcionesLogin::class.java)) // Cierra todas las actividades previas
+            finishAffinity()
         }
 
     }

@@ -16,6 +16,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
+import com.unichamba1.Opciones_login.Login_email
 
 class OpcionesLogin : AppCompatActivity() {
 
@@ -27,13 +28,6 @@ class OpcionesLogin : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-       /* if (FirebaseAuth.getInstance().currentUser == null) {
-            // No logueado, redirigir a la pantalla de login
-            startActivity(Intent(this, OpcionesLogin::class.java))
-            finish()
-            return
-        }*/
-
         binding= ActivityOpcionesLoginBinding.inflate(layoutInflater)
         enableEdgeToEdge()
         setContentView(binding.root)
@@ -43,7 +37,6 @@ class OpcionesLogin : AppCompatActivity() {
         progressDialog.setCanceledOnTouchOutside(false)
 
         firebaseAuth=FirebaseAuth.getInstance()
-        //firebaseAuth.getCurrentUser();
         comprobarSesion()
 
         val gso=GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -54,12 +47,12 @@ class OpcionesLogin : AppCompatActivity() {
         mGoogleSignIntent=GoogleSignIn.getClient(this,gso)
 
 
-        binding.IngresarGoogle.setOnClickListener {
+        /*binding.IngresarGoogle.setOnClickListener {
             googleLogin()
-        }
-        /*binding.registrarmeR.setOnClickListener {
-            startActivity(Intent(this@OpcionesLogin,Registro_reclutador::class.java))
         }*/
+        binding.IngresarEmail.setOnClickListener {
+            startActivity(Intent(this@OpcionesLogin, Login_email::class.java))
+        }
 
 
 

@@ -43,6 +43,7 @@ class Registro_email : AppCompatActivity() {
     private var email=""
     private var password=""
     private var r_password=""
+
     private fun validarInfo() {
         email=binding.ETEmail.text.toString().trim()
         password=binding.ETPassword.text.toString().trim()
@@ -57,15 +58,15 @@ class Registro_email : AppCompatActivity() {
             binding.ETEmail.requestFocus()
         }
         else if(password.isEmpty()){
-            binding.ETPassword.error="Ingrese password"
+            binding.ETPassword.error="Ingrese contraseña"
             binding.ETPassword.requestFocus()
         }
         else if(r_password.isEmpty()){
-            binding.EtRPassword.error="Repita el password"
+            binding.EtRPassword.error="Repita la contraseña"
             binding.EtRPassword.requestFocus()
         }
         else if(password != r_password){
-            binding.EtRPassword.error="No coinicden"
+            binding.EtRPassword.error="No coinciden"
             binding.EtRPassword.requestFocus()
         }
         else{
@@ -79,7 +80,12 @@ class Registro_email : AppCompatActivity() {
 
         firebaseAuth.createUserWithEmailAndPassword(email,password)
             .addOnSuccessListener {
-                llenarInfoBD()
+                progressDialog.dismiss()
+                val customMessage = "Registrado con éxito"
+                val customToast = CustomToast(this, customMessage)
+                customToast.show()
+                startActivity(Intent(this,MainActivity::class.java))
+                finishAffinity()
             }
             .addOnFailureListener {e->
                 progressDialog.dismiss()
@@ -89,7 +95,7 @@ class Registro_email : AppCompatActivity() {
             }
     }
 
-    private fun llenarInfoBD(){
+    /*private fun llenarInfoBD(){
         progressDialog.setMessage("Guardando información")
 
         val tiempo=Constantes.obtenerTiempoDis()
@@ -123,5 +129,5 @@ class Registro_email : AppCompatActivity() {
                 val customToast = CustomToast(this, customMessage)
                 customToast.show()
             }
-    }
+    }*/
 }

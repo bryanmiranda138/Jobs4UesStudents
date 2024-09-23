@@ -15,7 +15,7 @@
     <string name="Ingresar_google">Ingresar con Google</string>
     <string name="Ingresar_googleR">Ingresar con Google</string>
 
-    <string name="Txt_login">INICIO DE SESION UNICHAMBA</string>
+    <string name="Txt_login">INICIO DE SESION </string>
     <string name="ET_email">Email</string>
     <string name="ET_password">Contraseña</string>
     <string name="Btn_ingresar">Ingresar</string>
