@@ -20,7 +20,7 @@ class LauncherActivity : AppCompatActivity() {
             if (user.email!!.matches(Regex("^[a-zA-Z]+\\.[a-zA-Z]+@ues\\.edu\\.sv$"))) {
                 // Redirigir a MainActivityR si es empleado
                 startActivity(Intent(this, MainActivityR::class.java))
-            } else {
+            } else if (user.email!!.matches(Regex("^[a-z]+[0-9]+@ues\\.edu\\.sv$"))) {
                 // Redirigir a MainActivity si no es empleado
                 startActivity(Intent(this, MainActivity::class.java))
             }

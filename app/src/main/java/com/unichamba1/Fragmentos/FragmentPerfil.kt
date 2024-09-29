@@ -12,6 +12,7 @@ import android.widget.ArrayAdapter
 import android.widget.CheckBox
 import android.widget.LinearLayout
 import android.widget.PopupMenu
+import androidx.appcompat.widget.Toolbar
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
@@ -21,6 +22,8 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
 import com.unichamba1.model.Trabajo
 import android.app.DatePickerDialog
+import android.view.MenuItem
+import androidx.core.content.ContextCompat
 import com.unichamba1.CustomToast
 import java.text.SimpleDateFormat
 import java.util.*
@@ -42,6 +45,10 @@ class FragmentPerfil : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityFragmentPerfilBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        val toolbar: Toolbar = findViewById(R.id.toolbar)
+        toolbar.title = "Editar Perfil"
+        toolbar.setTitleTextColor(ContextCompat.getColor(this, R.color.white))
+        setSupportActionBar(toolbar)
 
         firebaseAuth = FirebaseAuth.getInstance()
         progressDialog = ProgressDialog(this)
@@ -52,6 +59,10 @@ class FragmentPerfil : AppCompatActivity() {
         cargarInfo()
         inicializarSpinnerMunicipios()
         inicializarSpinnerCarreras()
+
+        // Habilitar el botón de retroceso en el Toolbar
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayShowHomeEnabled(true)
 
         binding.btnGuardarCambios.setOnClickListener {
             validarInfo()
@@ -548,6 +559,16 @@ class FragmentPerfil : AppCompatActivity() {
                 imagenGaleria()
             }
             return@setOnMenuItemClickListener true
+        }
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            android.R.id.home -> {
+                onBackPressed()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
         }
     }
 

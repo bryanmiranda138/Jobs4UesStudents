@@ -44,7 +44,7 @@ class OfertaDetalleActivity : AppCompatActivity() {
         btnApply = findViewById(R.id.btnApply)
         val userEmail = mAuth.currentUser?.email
         // Verifica si el usuario está autenticado
-        if (mAuth.currentUser != null && esEstudiante(userEmail)) {
+        if (mAuth.currentUser != null && esEstudiante(userEmail)==true) {
             // Si el usuario está autenticado, habilita el botón "Aplicar"
             btnApply.isEnabled = true
         } else {
@@ -88,8 +88,11 @@ class OfertaDetalleActivity : AppCompatActivity() {
 
 
     private fun esEstudiante(email: String?): Boolean {
-        return email?.endsWith("@ues.edu.sv")== true
+        return email?.let {
+            it.endsWith("@ues.edu.sv") && !it.substringBefore("@ues.edu.sv").contains(".")
+        } ?: false
     }
+
    private fun openWhatsApp() {
 
         val phoneNumber = intent.getStringExtra(EXTRA_TELEFONO) // Reemplaza con el número de teléfono al que deseas enviar el mensaje

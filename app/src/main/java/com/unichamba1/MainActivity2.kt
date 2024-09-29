@@ -4,40 +4,38 @@ import android.content.Intent
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.unichamba1.Fragmentos.FragmentCuenta
 import com.unichamba1.Fragmentos.FragmentInicio
 import com.unichamba1.Fragmentos.FragmentMisOfertas
-import com.unichamba1.Fragmentos.FragmentNuevaOferta
 import com.unichamba1.databinding.ActivityMainBinding
 import com.google.firebase.auth.FirebaseAuth
-import android.app.Dialog
 import android.net.Uri
-import android.view.ViewGroup
-import android.widget.Button
 import com.unichamba1.Fragmentos.FragmentJovenes
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
 import android.widget.ImageButton
 import androidx.core.view.GravityCompat
+import com.unichamba1.Fragmentos.FragmentChats
+import com.unichamba1.databinding.ActivityMain2Binding
 
 
 class MainActivity2 : AppCompatActivity(),FragmentInicio.OnVerOfertasClickListener , FragmentInicio.OnVerJovenesClickListener{
 
-    private lateinit var binding: ActivityMainBinding
+    private lateinit var binding: ActivityMain2Binding
     private lateinit var firebaseAuth: FirebaseAuth
     private lateinit var drawerLayout: DrawerLayout
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivityMain2Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
         firebaseAuth = FirebaseAuth.getInstance()
 
 
 
+
         drawerLayout = findViewById(R.id.drawer_layout)
-        val navView = findViewById<NavigationView>(R.id.mi_menu0)
+        val navView = findViewById<NavigationView>(R.id.mi_menu4)
         val hamburgerButton = findViewById<ImageButton>(R.id.btnBack)
         hamburgerButton.setOnClickListener {
             if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
@@ -65,6 +63,10 @@ class MainActivity2 : AppCompatActivity(),FragmentInicio.OnVerOfertasClickListen
                     verFragmentMisOfertas()
                     true
                 }
+                R.id.Item_Cuenta -> {
+                    verFragmentChats()
+                    true
+                }
                 else -> {
                     false
                 }
@@ -87,6 +89,13 @@ class MainActivity2 : AppCompatActivity(),FragmentInicio.OnVerOfertasClickListen
 
                 R.id.Item_Quienes_Somos -> {
                     abrirSitioWeb("https://website-unichamba.netlify.app/details")
+                    drawerLayout.closeDrawer(GravityCompat.START)
+                    true
+                }
+                R.id.Item_Iniciar_Sesion -> {
+                    // Lanza la actividad OpcionesLogin
+                    val intent = Intent(this, OpcionesLogin::class.java)
+                    startActivity(intent)
                     drawerLayout.closeDrawer(GravityCompat.START)
                     true
                 }
@@ -140,6 +149,14 @@ class MainActivity2 : AppCompatActivity(),FragmentInicio.OnVerOfertasClickListen
         val fragment = FragmentMisOfertas()
         val fragmentTransition = supportFragmentManager.beginTransaction()
         fragmentTransition.replace(binding.FragmentL1!!.id, fragment, "FragmentMisOfertas")
+        fragmentTransition.commit()
+    }
+
+    private fun verFragmentChats() {
+        binding.TituloRL!!.text = "Cuenta"
+        val fragment = FragmentChats()
+        val fragmentTransition = supportFragmentManager.beginTransaction()
+        fragmentTransition.replace(binding.FragmentL1!!.id, fragment, "FragmentCuenta")
         fragmentTransition.commit()
     }
 

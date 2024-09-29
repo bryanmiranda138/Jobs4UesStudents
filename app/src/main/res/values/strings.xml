@@ -9,23 +9,25 @@
     <string name="Item_Cuenta">Cuenta</string>
 
     <string name="TituloRL">Titulo</string>
-    <string name="TituloUni">UNICHAMBA APP</string>
+    <string name="TituloUni">JOBS4UESSTUDENTS APP</string>
 
-    <string name="Ingresar_email">Ingresar con Email</string>
+    <string name="Ingresar_email">Ingresar</string>
     <string name="Ingresar_google">Ingresar con Google</string>
     <string name="Ingresar_googleR">Ingresar con Google</string>
 
     <string name="Txt_login">INICIO DE SESION </string>
+    <string name="Txt_login2">JOBS4UESSTUDENTS </string>
     <string name="ET_email">Email</string>
     <string name="ET_password">Contraseña</string>
     <string name="Btn_ingresar">Ingresar</string>
     <string name="Txt_no_cuenta">¿ No tienes una cuenta ?</string>
     <string name="Txt_ContraSegura">Crea una contraseña segura con una combinación de letras, números y símbolos</string>
-    <string name="Txt_creditos">UnichambaApp DSI1 2024</string>
+    <string name="Txt_creditos">Jobs4UesStudents DSI2 2024</string>
     <string name="Txt_registrarme">INGRESA AQUI</string>
 
 
     <string name="Txt_registro">Registro de Usuario</string>
+    <string name="Txt_registro2">Jobs4UesStudents</string>
     <string name="Txt_olvide_pass">He olvidado mi contraseña</string>
     <string name="Tv_recuperar">Recuperar</string>
     <string name="Et_r_password">Repetir Contraseña</string>

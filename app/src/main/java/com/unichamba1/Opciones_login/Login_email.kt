@@ -15,6 +15,7 @@ import com.unichamba1.RecuperarPassword
 import com.unichamba1.Registro_email
 import com.unichamba1.databinding.ActivityLoginEmailBinding
 import com.google.firebase.auth.FirebaseAuth
+import com.unichamba1.MainActivityR
 
 class Login_email : AppCompatActivity() {
 
@@ -78,20 +79,47 @@ class Login_email : AppCompatActivity() {
         progressDialog.setMessage("")
         progressDialog.show()
 
-        firebaseAuth.signInWithEmailAndPassword(email,password)
+        firebaseAuth.signInWithEmailAndPassword(email, password)
             .addOnSuccessListener {
                 progressDialog.dismiss()
-                startActivity(Intent(this,MainActivity::class.java))
-                finishAffinity()
-                Toast.makeText(this,
-                    "Bienvenido(a)",
-                    Toast.LENGTH_SHORT).show()
+
+                // Obtener el correo del usuario autenticado
+                val userEmail = firebaseAuth.currentUser?.email
+
+                if (userEmail != null) {
+                    // Verificar si el correo tiene el formato "a-z0-9@ues.edu.sv"
+                    val estudiantePattern = Regex("^[a-z0-9]+@ues\\.edu\\.sv$")
+                    // Verificar si el correo tiene el formato "a-z.a-z@ues.edu.sv"
+                    val empleadoPattern = Regex("^[a-z]+\\.[a-z]+@ues\\.edu\\.sv$")
+
+                    when {
+                        estudiantePattern.matches(userEmail) -> {
+                            // Redirigir a MainActivity si es estudiante
+                            startActivity(Intent(this, MainActivity::class.java))
+                        }
+                        empleadoPattern.matches(userEmail) -> {
+                            // Redirigir a MainActivityR si es empleado
+                            startActivity(Intent(this, MainActivityR::class.java))
+                        }
+                        else -> {
+                            Toast.makeText(this,
+                                "Formato de correo no válido.",
+                                Toast.LENGTH_SHORT).show()
+                        }
+                    }
+
+                    // Finalizar todas las actividades anteriores para evitar regresar con el botón atrás
+                    finishAffinity()
+
+                    Toast.makeText(this, "Bienvenido(a)", Toast.LENGTH_SHORT).show()
+                } else {
+                    Toast.makeText(this, "No se pudo obtener el correo del usuario.", Toast.LENGTH_SHORT).show()
+                }
             }
-            .addOnFailureListener {e->
+            .addOnFailureListener { e ->
                 progressDialog.dismiss()
-                Toast.makeText(this,
-                    "No se pudo iniciar sesion debido a ${e.message}",
-                    Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "No se pudo iniciar sesión debido a ${e.message}", Toast.LENGTH_SHORT).show()
             }
     }
+
 }

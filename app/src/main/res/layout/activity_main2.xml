@@ -36,7 +36,7 @@
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentBottom="true"
                 android:layout_margin="5dp"
-                android:src="@mipmap/logofinal2_round" />
+                android:src="@mipmap/ic_beta" />
 
             <ImageButton
                 android:id="@+id/btnBack"
@@ -85,7 +85,7 @@
             android:backgroundTint="@color/negro1"
             app:itemTextColor="@color/white"
             app:labelVisibilityMode="labeled"
-            app:menu="@menu/mi_menu22"
+            app:menu="@menu/mi_menu11"
             app:tint="@color/white" />
 
     </RelativeLayout>
@@ -108,7 +108,6 @@
             android:layout_height="match_parent"
             android:gravity="bottom"
             android:orientation="vertical">
-
             <include layout="@layout/nav_footer" />
         </LinearLayout>
 

@@ -17,4 +17,10 @@
         android:title="¿Quienes Somos?"
         android:icon="@drawable/baseline_groups_25"
         android:clickable="true"/>
+
+    <item
+        android:id="@+id/Item_Cerrar_Sesion"
+        android:title="Cerrar Sesión"
+        android:icon="@drawable/clinical_notes"
+        android:clickable="true"/>
 </menu>

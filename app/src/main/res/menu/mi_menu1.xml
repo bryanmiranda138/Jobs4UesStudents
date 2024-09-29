@@ -15,8 +15,8 @@
 
     <item
         android:id="@+id/Item_Cuenta"
-        android:title="@string/Item_Cuenta"
-        android:icon="@drawable/ic_cuenta"
+        android:title="Jovenes"
+        android:icon="@drawable/baseline_groups_25"
         />
 
 </menu>

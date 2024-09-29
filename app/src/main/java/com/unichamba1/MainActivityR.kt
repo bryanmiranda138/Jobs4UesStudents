@@ -15,6 +15,7 @@ import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
 import android.widget.ImageButton
 import androidx.core.view.GravityCompat
+import com.unichamba1.Fragmentos.FragmentJovenes
 import com.unichamba1.Fragmentos.FragmentMisOfertas
 import com.unichamba1.databinding.ActivityMainRBinding
 
@@ -45,13 +46,13 @@ class MainActivityR : AppCompatActivity(){
                 drawerLayout.openDrawer(GravityCompat.START)
             }
         }
-        verFragmentCuentaR()
+        verFragmentFiltrar()
 
 
         binding.BottonNV!!.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.Item_Cuenta -> {
-                    verFragmentCuentaR()
+                    verFragmentFiltrar()
                     true
                 }
 
@@ -89,6 +90,20 @@ class MainActivityR : AppCompatActivity(){
                     drawerLayout.closeDrawer(GravityCompat.START)
                     true
                 }
+                R.id.Item_Cerrar_Sesion -> {
+                    // Cerrar la sesión del usuario con FirebaseAuth
+                    FirebaseAuth.getInstance().signOut()
+
+                    // Lanza la actividad OpcionesLogin
+                    val intent = Intent(this, OpcionesLogin::class.java)
+                    intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK // Limpia el backstack para evitar que el usuario vuelva con el botón atrás
+                    startActivity(intent)
+
+                    // Cierra el DrawerLayout
+                    drawerLayout.closeDrawer(GravityCompat.START)
+                    true
+                }
+
                 else -> false
             }
         }
@@ -158,6 +173,14 @@ class MainActivityR : AppCompatActivity(){
         val fragment = FragmentNuevaOferta()
         val fragmentTransition = supportFragmentManager.beginTransaction()
         fragmentTransition.replace(binding.FragmentL1!!.id, fragment, "FragmentNuevaOferta")
+        fragmentTransition.commit()
+    }
+
+    private fun verFragmentFiltrar() {
+        binding.TituloRL!!.text = "Jovenes"
+        val fragment = FragmentJovenes()
+        val fragmentTransition = supportFragmentManager.beginTransaction()
+        fragmentTransition.replace(binding.FragmentL1!!.id, fragment, "FragmentFiltral")
         fragmentTransition.commit()
     }
 

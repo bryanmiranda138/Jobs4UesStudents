@@ -45,14 +45,42 @@ class FragmentCuenta : Fragment() {
         firebaseAuth=FirebaseAuth.getInstance()
 
 
+        // Obtener el correo electrónico del usuario autenticado
+        val emailUsuario = firebaseAuth.currentUser?.email ?: ""
+
+        // Verificar si el usuario es estudiante o empleado
+        val esEstudianteOEmpleado = emailUsuario.endsWith("@ues.edu.sv") && (emailUsuario.contains("."))
+
+        // Si no es estudiante ni empleado, ocultar todos los campos
+        if (!esEstudianteOEmpleado) {
+            ocultarCampos()
+        } else {
+            // Cargar y mostrar la información del usuario
+            leerInfo()
+        }
+
+        // Obtener el correo electrónico del usuario actual
+        val email = firebaseAuth.currentUser?.email
+
+        // Verificar si el correo electrónico cumple con los criterios para ser considerado de un estudiante
+        val esEstudiante = email?.let {
+            it.endsWith("@ues.edu.sv") && !it.substringBefore("@ues.edu.sv").contains(".")
+        } ?: false
+
         // Habilitar o deshabilitar el botón de editar perfil basado en si es estudiante o no
         val btnEditarPerfil: Button = view.findViewById(R.id.btn_editar_perfil)
+        btnEditarPerfil.isEnabled = esEstudiante
 
-
-
-        btnEditarPerfil.setOnClickListener {
-            val intent = Intent(mContext, FragmentPerfil::class.java)
-            startActivity(intent)
+        if (esEstudiante) {
+            btnEditarPerfil.setOnClickListener {
+                val intent = Intent(mContext, FragmentPerfil::class.java)
+                startActivity(intent)
+            }
+        } else {
+            // Opcional: Mostrar un mensaje indicando por qué el botón está deshabilitado
+            btnEditarPerfil.setOnClickListener {
+                Toast.makeText(mContext, "Solo disponible para estudiantes de la UES", Toast.LENGTH_SHORT).show()
+            }
         }
 
         binding.BtnCerrarSesion.setOnClickListener {
