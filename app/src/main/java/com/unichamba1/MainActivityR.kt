@@ -139,7 +139,7 @@ class MainActivityR : AppCompatActivity(){
             sharedPreferencesEditor.putBoolean(userId, true)
             sharedPreferencesEditor.apply()
             dialog.dismiss() // Cerrar el diálogo
-            verFragmentCuentaR() // Mostrar la pantalla principal después de aceptar los términos
+            verFragmentNuevaOfertaR() // Mostrar la pantalla principal después de aceptar los términos
         }
         dialog.show()
     }

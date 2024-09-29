@@ -11,6 +11,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.unichamba1.databinding.ActivityRegistroEmailBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
+import com.unichamba1.Opciones_login.Login_email
 
 class Registro_email : AppCompatActivity() {
 
@@ -84,7 +85,7 @@ class Registro_email : AppCompatActivity() {
                 val customMessage = "Registrado con éxito"
                 val customToast = CustomToast(this, customMessage)
                 customToast.show()
-                startActivity(Intent(this,MainActivity::class.java))
+                startActivity(Intent(this,Login_email::class.java))
                 finishAffinity()
             }
             .addOnFailureListener {e->

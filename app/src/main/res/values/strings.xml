@@ -27,6 +27,8 @@
 
 
     <string name="Txt_registro">Registro de Usuario</string>
+    <string name="Txt_registroE">Estudiante: formato " [a-z0-9]@ues.edu.sv " \n  ejemplo: jp101112@ues.edu.sv</string>
+    <string name="Txt_registroR">Reclutador: formato " [a-z].[a-z]@ues.edu.sv " \n  ejemplo: juan.perez@ues.edu.sv</string>
     <string name="Txt_registro2">Jobs4UesStudents</string>
     <string name="Txt_olvide_pass">He olvidado mi contraseña</string>
     <string name="Tv_recuperar">Recuperar</string>
