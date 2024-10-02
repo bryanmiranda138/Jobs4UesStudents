@@ -18,6 +18,7 @@ import com.bumptech.glide.Glide
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import android.net.Uri
+import com.unichamba1.MainActivity2
 
 
 class FragmentCuenta : Fragment() {
@@ -85,8 +86,9 @@ class FragmentCuenta : Fragment() {
 
         binding.BtnCerrarSesion.setOnClickListener {
             firebaseAuth.signOut()
-            startActivity(Intent(mContext,OpcionesLogin::class.java))
+            startActivity(Intent(mContext,MainActivity2::class.java))
             activity?.finishAffinity()
+            Toast.makeText(mContext, "¡ Hasta luego !", Toast.LENGTH_SHORT).show()
         }
 
         btnEditarPerfil.setOnClickListener {

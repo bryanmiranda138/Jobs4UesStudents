@@ -14,6 +14,7 @@ import android.widget.Button
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
 import android.widget.ImageButton
+import android.widget.Toast
 import androidx.core.view.GravityCompat
 import com.unichamba1.Fragmentos.FragmentJovenes
 import com.unichamba1.Fragmentos.FragmentMisOfertas
@@ -91,14 +92,16 @@ class MainActivityR : AppCompatActivity(){
                     true
                 }
                 R.id.Item_Cerrar_Sesion -> {
+                    // Mostrar mensaje de despedida
+                    Toast.makeText(this, "¡ Hasta luego !", Toast.LENGTH_SHORT).show()
+
                     // Cerrar la sesión del usuario con FirebaseAuth
                     FirebaseAuth.getInstance().signOut()
 
                     // Lanza la actividad OpcionesLogin
-                    val intent = Intent(this, OpcionesLogin::class.java)
+                    val intent = Intent(this, MainActivity2::class.java)
                     intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK // Limpia el backstack para evitar que el usuario vuelva con el botón atrás
                     startActivity(intent)
-
                     // Cierra el DrawerLayout
                     drawerLayout.closeDrawer(GravityCompat.START)
                     true

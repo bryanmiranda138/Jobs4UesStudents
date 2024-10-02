@@ -10,6 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ProgressBar
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -157,7 +158,8 @@ class FragmentInicio : Fragment(R.layout.fragment_inicio) {
                 }
                 startActivity(intent)
             } else {
-                // Usuario no logeado, redirigir a la vista de login
+                // Mostrar mensaje de despedida
+                Toast.makeText(activity, "Debes iniciar sesión para ver los detalles del Estudiante", Toast.LENGTH_SHORT).show()// Usuario no logeado, redirigir a la vista de login
                 val intent = Intent(activity, OpcionesLogin::class.java).apply {
                     putExtra(JovenesDetalleActivity.EXTRA_ID, joven.id) // Guardar el ID del joven
                 }

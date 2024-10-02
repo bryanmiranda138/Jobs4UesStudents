@@ -15,6 +15,7 @@ import android.widget.CheckBox
 import android.widget.ImageButton
 import android.widget.ProgressBar
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.widget.SearchView
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
@@ -79,6 +80,8 @@ class FragmentJovenes : Fragment() {
                 intent.putExtra(JovenesDetalleActivity.EXTRA_ID, id)
                 startActivity(intent)
             } else {
+                // Usuario no autenticado, mostrar mensaje y redirigir a la actividad de opciones de login
+                Toast.makeText(activity, "Debes iniciar sesión para ver los detalles del Estudiante", Toast.LENGTH_SHORT).show()
                 // Usuario no autenticado, redirigir a la actividad de opciones de login
                 val intent = Intent(activity, OpcionesLogin::class.java)
                 startActivity(intent)

@@ -386,7 +386,7 @@
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/Btn_cerrar_sesion"
-                    android:layout_width="match_parent"
+                    android:layout_width="160dp"
                     android:layout_height="60dp"
                     android:layout_marginTop="20dp"
                     android:layout_marginBottom="5dp"

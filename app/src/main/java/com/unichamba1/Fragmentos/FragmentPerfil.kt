@@ -393,6 +393,9 @@ class FragmentPerfil : AppCompatActivity() {
                     .set(hashMap)
                     .addOnSuccessListener {
                         progressDialog.dismiss()
+                        // Iniciar actividad que contiene el FragmentCuenta
+                        val intent = Intent(this, FragmentCuenta::class.java)
+                        startActivity(intent)
                         Toast.makeText(this, "Se actualizó su información", Toast.LENGTH_SHORT).show()
                     }
                     .addOnFailureListener { e ->
