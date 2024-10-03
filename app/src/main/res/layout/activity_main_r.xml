@@ -23,7 +23,7 @@
                 android:id="@+id/ToolbarRl"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/m_toolbar_height"
-                android:background="#04061A">
+                android:background="#dc143c">
 
                 <TextView
                     android:id="@+id/TituloRL"
@@ -91,7 +91,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
-                android:background="#04061A"
+                android:background="#dc143c"
                 android:backgroundTint="@color/negro1"
                 app:itemTextColor="@color/white"
                 app:labelVisibilityMode="labeled"
@@ -106,7 +106,7 @@
             android:layout_width="250dp"
             android:layout_height="match_parent"
             android:layout_gravity="start"
-            android:background="@color/blued"
+            android:background="#dc143c"
 
             app:itemTextColor="@color/white"
             app:labelVisibilityMode="labeled"
