@@ -185,7 +185,7 @@ class FragmentNuevaOferta : Fragment() {
     }
 
     private fun uploadImageToStorage(description: String, municipio: String, carreras: String, telefono: String) {
-        progressDialog.setMessage("Subiendo imagen a Storage")
+        progressDialog.setMessage("Publicando Anuncio, espere porfavor")
         progressDialog.show()
 
         val rutaImagen = "anuncios/${mAuth.uid}/imagenoferta.jpg"
