@@ -18,6 +18,7 @@ import com.bumptech.glide.Glide
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import android.net.Uri
+import android.widget.ProgressBar
 import com.unichamba1.MainActivity2
 
 
@@ -26,7 +27,7 @@ class FragmentCuenta : Fragment() {
     private lateinit var firebaseAuth: FirebaseAuth
     private lateinit var mContext: Context
     private val REQUEST_CODE_EDIT_PROFILE = 1
-
+    private lateinit var progressBarCuenta: ProgressBar
 
 
     override fun onAttach(context: Context) {
@@ -51,6 +52,8 @@ class FragmentCuenta : Fragment() {
 
         // Verificar si el usuario es estudiante o empleado
         val esEstudianteOEmpleado = emailUsuario.endsWith("@ues.edu.sv") && (emailUsuario.contains("."))
+
+        progressBarCuenta = view.findViewById(R.id.progressBarCuenta)
 
         // Si no es estudiante ni empleado, ocultar todos los campos
         if (!esEstudianteOEmpleado) {
@@ -129,6 +132,7 @@ class FragmentCuenta : Fragment() {
     }
 
     private fun leerInfo() {
+        progressBarCuenta.visibility = View.VISIBLE
         val firestore = FirebaseFirestore.getInstance()
         firestore.collection("estudiantes")
             .document(firebaseAuth.uid!!)
@@ -174,7 +178,10 @@ class FragmentCuenta : Fragment() {
 
                     // Limpiar el LinearLayout antes de agregar nuevas vistas
                     binding.linearTrabajos.removeAllViews()
-
+                    // Ocultar la barra de progreso en el hilo principal
+                    activity?.runOnUiThread {
+                        progressBarCuenta.visibility = View.GONE
+                    }
                     // Agregar trabajos al LinearLayout
                     for (trabajo in trabajosSeleccionados) {
                         val icono = trabajo["icono"] ?: ""

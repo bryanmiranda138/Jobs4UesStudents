@@ -1,5 +1,6 @@
 package com.unichamba1
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -27,8 +28,10 @@ class OfertaDetalleActivity : AppCompatActivity() {
         const val EXTRA_DESCRIPTION = "extra_description"
         const val EXTRA_CARRERA = "extra_carrera"
         const val EXTRA_IMAGEN = "extra_imagen"
+        const val EXTRA_DIRECTION = "extra_direction"
     }
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_oferta_detalle)
@@ -58,6 +61,10 @@ class OfertaDetalleActivity : AppCompatActivity() {
         val quienPublica: TextView = findViewById(R.id.quienPublica)
         val carrera: TextView = findViewById(R.id.carrera)
         val image: ImageView = findViewById(R.id.imagen)
+
+        val direction: TextView = findViewById(R.id.direction)
+        val municipio = intent.getStringExtra(EXTRA_DIRECTION)
+        direction.text = municipio
 
         // Habilitar el botón de retroceso en el Toolbar
         supportActionBar?.setDisplayHomeAsUpEnabled(true)

@@ -37,6 +37,8 @@ class OfertaAdapterInicio(private var ofertas: List<Oferta>) : RecyclerView.Adap
                         putExtra(OfertaDetalleActivity.EXTRA_TELEFONO, oferta.telefono)
                         putExtra(OfertaDetalleActivity.EXTRA_CARRERA, oferta.carrera.toTypedArray())
                         putExtra(OfertaDetalleActivity.EXTRA_IMAGEN, oferta.imagen)
+                        putExtra(OfertaDetalleActivity.EXTRA_DIRECTION, oferta.direction) // Asegúrate de que 'oferta' tenga un campo 'direction'
+
                     }
 
                     context.startActivity(intent)

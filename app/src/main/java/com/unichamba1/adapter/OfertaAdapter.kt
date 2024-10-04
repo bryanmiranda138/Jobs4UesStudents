@@ -34,6 +34,8 @@ class OfertaAdapter(private var ofertas: List<Oferta>) : RecyclerView.Adapter<Of
                     putExtra(OfertaDetalleActivity.EXTRA_DESCRIPTION, oferta.description)
                     putExtra(OfertaDetalleActivity.EXTRA_CARRERA, oferta.carrera.toTypedArray())
                     putExtra(OfertaDetalleActivity.EXTRA_IMAGEN, oferta.imagenSmall) // Asegúrate de que este campo existe
+                    putExtra(OfertaDetalleActivity.EXTRA_DIRECTION, oferta.direction) // Asegúrate de que 'oferta' tenga un campo 'direction'
+
                 }
                 context?.startActivity(intent)
             }

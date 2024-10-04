@@ -6,6 +6,9 @@ data class Oferta(
     val quienPublica: String = "",
     val telefono: String = "",
     val imagenSmall: String = "",
-    val carrera: List<String> = listOf() // Lista vacía por defecto
-)
+    val carrera: List<String> = listOf() ,// Lista vacía por defecto
+    val direction: String = ""
+) {
+
+}
 
