@@ -106,7 +106,7 @@
                     android:layout_width="60dp"
                     android:layout_height="45dp"
                     android:layout_marginTop="8dp"
-                    android:src="@drawable/fecha_de_nacimiento"
+                    android:src="@drawable/calendario"
                     android:text="Fecha de nacimiento: "
                     android:textStyle="bold" />
 
@@ -129,7 +129,7 @@
                     android:layout_width="60dp"
                     android:layout_height="45dp"
                     android:layout_marginTop="8dp"
-                    android:src="@drawable/location"
+                    android:src="@drawable/ubicacion"
                     android:text="Municipio: "
                     android:textStyle="bold" />
 
@@ -152,7 +152,7 @@
                     android:layout_width="60dp"
                     android:layout_height="45dp"
                     android:layout_marginTop="8dp"
-                    android:src="@drawable/career"
+                    android:src="@drawable/carrera1"
                     android:text="Carrera: "
                     android:textStyle="bold" />
 
@@ -174,10 +174,10 @@
                     android:layout_width="60dp"
                     android:layout_height="45dp"
                     android:layout_marginTop="8dp"
-                    android:src="@drawable/email"
+                    android:src="@drawable/sobre"
                     android:text="Email: "
-                    android:textStyle="bold"
-                    app:tint="@color/black" />
+                    android:textStyle="bold"/>
+                <!--app:tint="@color/black" -->
 
                 <TextView
                     android:id="@+id/email"
@@ -197,7 +197,7 @@
                     android:layout_width="60dp"
                     android:layout_height="45dp"
                     android:layout_marginTop="8dp"
-                    android:src="@drawable/telephone"
+                    android:src="@drawable/llamada"
                     android:text="telefono: "
                     android:textStyle="bold" />
 
@@ -243,7 +243,7 @@
                     android:layout_width="60dp"
                     android:layout_height="45dp"
                     android:layout_marginTop="8dp"
-                    android:src="@drawable/dato_de_registro"
+                    android:src="@drawable/editar"
                     android:text="Fecha de registro: "
                     android:textStyle="bold" />
 
@@ -268,6 +268,7 @@
                 android:id="@+id/btn_whatsapp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/white"
                 android:text="Contactar por WhatsApp"
                 android:backgroundTint="#1AD361"
                 android:layout_marginEnd="5dp"/>
@@ -277,6 +278,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
+                android:textColor="@color/white"
                 android:backgroundTint="#1AD361"
                 android:text="Ver CV" />
         </LinearLayout>

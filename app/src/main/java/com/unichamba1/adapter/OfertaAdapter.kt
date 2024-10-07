@@ -64,14 +64,14 @@ class OfertaAdapter(private var ofertas: List<Oferta>) : RecyclerView.Adapter<Of
             originalOfertas
         } else {
             originalOfertas.filter {
-                it.quienPublica.contains(query, ignoreCase = true) || it.description.contains(query, ignoreCase = true)
+                it.direction.contains(query, ignoreCase = true) || it.description.contains(query, ignoreCase = true)
             }
         }
         updateList(filteredList)
     }
 
     private fun OfertaViewHolder.bind(oferta: Oferta) {
-        binding.quienPublica.text = oferta.quienPublica
+        binding.direction.text = oferta.direction
         binding.description.text = oferta.description
 
         // Formatea la lista de carreras como una cadena separada por comas

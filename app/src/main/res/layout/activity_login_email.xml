@@ -82,6 +82,8 @@
             android:id="@+id/Btn_ingresar"
             android:text="@string/Btn_ingresar"
             android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:backgroundTint="#dc143c"
             android:layout_marginTop="12dp"
             android:layout_width="180dp"
             android:layout_height="@dimen/m_button_height"/>

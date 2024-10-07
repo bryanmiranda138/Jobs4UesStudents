@@ -57,7 +57,9 @@
             android:id="@+id/Ingresar_email"
             android:layout_width="match_parent"
             android:layout_height="@dimen/m_button_height"
+            android:textColor="@color/white"
             android:text="@string/Ingresar_email"
+            android:backgroundTint="#dc143c"
             android:textAllCaps="true"
             app:cornerRadius="8dp"/>
 

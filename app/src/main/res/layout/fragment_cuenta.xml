@@ -136,10 +136,11 @@
 
                 <ImageView
                     android:id="@+id/imageView2"
-                    android:layout_width="70dp"
-                    android:layout_height="55dp"
-                    android:layout_marginStart="10dp"
-                    android:src="@drawable/location"
+                    android:layout_width="50dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="8dp"
+                    android:src="@drawable/ubicacion"
+                    android:outlineAmbientShadowColor="@color/azul"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
@@ -166,13 +167,13 @@
 
                 <ImageView
                     android:id="@+id/imageView3"
-                    android:layout_width="70dp"
-                    android:layout_height="55dp"
-                    android:src="@drawable/register"
+                    android:layout_width="51dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/editar"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    android:layout_marginStart="10dp"
+                    android:layout_marginStart="8dp"
                     tools:ignore="MissingConstraints" />
 
                 <TextView
@@ -195,13 +196,13 @@
 
                 <ImageView
                     android:id="@+id/imageView7"
-                    android:layout_width="70dp"
-                    android:layout_height="55dp"
-                    android:src="@drawable/calendar"
+                    android:layout_width="50dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="8dp"
+                    android:src="@drawable/calendario"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    android:layout_marginStart="10dp"
                     tools:ignore="MissingConstraints" />
 
                 <TextView
@@ -224,10 +225,10 @@
 
                 <ImageView
                     android:id="@+id/imageView4"
-                    android:layout_width="70dp"
-                    android:layout_height="55dp"
-                    android:layout_marginStart="10dp"
-                    android:src="@drawable/career"
+                    android:layout_width="50dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="4dp"
+                    android:src="@drawable/carrera1"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
@@ -238,7 +239,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
-                    android:text="Carrera: Ingeniería en Sistemas"
+                    android:text="Carrera: Ingeniería en Sistemas Informáticos"
                     android:textSize="17sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toEndOf="@id/imageView4"
@@ -253,10 +254,10 @@
 
                 <ImageView
                     android:id="@+id/imageView6"
-                    android:layout_width="70dp"
-                    android:layout_height="55dp"
-                    android:layout_marginStart="10dp"
-                    android:src="@drawable/telephone"
+                    android:layout_width="50dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="6dp"
+                    android:src="@drawable/llamada"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
@@ -282,9 +283,9 @@
 
                 <ImageView
                     android:id="@+id/imageView9"
-                    android:layout_width="70dp"
-                    android:layout_height="55dp"
-                    android:layout_marginStart="10dp"
+                    android:layout_width="50dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="8dp"
                     android:src="@drawable/whatsapp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -367,6 +368,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:backgroundTint="#1AD361"
+                    android:textColor="@color/white"
                     android:text="Ver CV"
                     android:visibility="gone" />
 
@@ -401,7 +403,8 @@
                     android:layout_marginBottom="5dp"
                     android:layout_marginHorizontal="5dp"
                     app:tint="@color/white"
-                    android:backgroundTint="@color/negro1"
+                    android:textColor="@color/white"
+                    android:backgroundTint="#dc143c"
                     android:text="@string/Btn_cerrar_sesion"
                     android:textAllCaps="true"
                     android:textStyle="bold" />

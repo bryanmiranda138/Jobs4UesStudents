@@ -48,7 +48,7 @@ class OfertaAdapterInicio(private var ofertas: List<Oferta>) : RecyclerView.Adap
 
         fun bind(oferta: Oferta) {
             binding.description.text = oferta.description
-            binding.quienPublica.text = oferta.quienPublica
+            binding.direction.text = oferta.direction
 
             // Formatea la lista de carreras como una cadena separada por comas
             val carrerasText = oferta.carrera.joinToString(", ")

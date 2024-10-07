@@ -78,6 +78,12 @@ class MainActivity : AppCompatActivity(),FragmentInicio.OnVerOfertasClickListene
             }
 
         }
+
+        // Verifica si se debe mostrar FragmentInicio
+        if (intent.getBooleanExtra("mostrarFragmentInicio", false)) {
+            verFragmentInicio()
+        }
+
         navView.setNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.Item_sitio -> {

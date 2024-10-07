@@ -109,6 +109,7 @@ class FragmentNuevaOferta : Fragment() {
                     uploadImageToStorage(description, municipio, carreras, telefono)
                 } else {
                     publishOffer(description, municipio, carreras, null, null, telefono)
+
                 }
             } else {
                 Toast.makeText(context, "Por favor, completa todos los campos", Toast.LENGTH_SHORT).show()

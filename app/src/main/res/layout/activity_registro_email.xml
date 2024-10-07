@@ -127,6 +127,8 @@
             android:id="@+id/Btn_registrar"
             android:text="@string/Btn_registrar"
             android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:backgroundTint="#dc143c"
             android:layout_marginTop="35dp"
             android:layout_width="180dp"
             android:layout_height="60dp">

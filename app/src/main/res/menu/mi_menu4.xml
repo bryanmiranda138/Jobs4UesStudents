@@ -21,6 +21,6 @@
     <item
         android:id="@+id/Item_Iniciar_Sesion"
         android:title="Iniciar Sesión"
-        android:icon="@drawable/clinical_notes"
+        android:icon="@drawable/ingresar"
         android:clickable="true"/>
 </menu>

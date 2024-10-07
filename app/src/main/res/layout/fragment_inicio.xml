@@ -67,7 +67,7 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/cardAnuncios"
             android:layout_width="match_parent"
-            android:layout_height="300dp"
+            android:layout_height="330dp"
             app:cardBackgroundColor="#3B444B"
             android:layout_marginTop="40dp"
             app:cardCornerRadius="16dp"

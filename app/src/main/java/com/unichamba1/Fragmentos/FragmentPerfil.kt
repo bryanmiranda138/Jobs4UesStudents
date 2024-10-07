@@ -25,6 +25,7 @@ import android.app.DatePickerDialog
 import android.view.MenuItem
 import androidx.core.content.ContextCompat
 import com.unichamba1.CustomToast
+import com.unichamba1.MainActivity
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -66,6 +67,11 @@ class FragmentPerfil : AppCompatActivity() {
 
         binding.btnGuardarCambios.setOnClickListener {
             validarInfo()
+            // Después de guardar la información, inicia MainActivity
+            val intent = Intent(this, MainActivity::class.java)
+            intent.putExtra("mostrarFragmentInicio", true) // Usamos un extra para indicar que queremos mostrar FragmentInicio
+            startActivity(intent)
+            finish() // Finaliza FragmentPerfil para que el usuario no pueda volver a esta pantalla con el botón atrás
         }
 
         binding.FABCambiarImg.setOnClickListener {
@@ -391,8 +397,6 @@ class FragmentPerfil : AppCompatActivity() {
                     .set(hashMap)
                     .addOnSuccessListener {
                         progressDialog.dismiss()
-                        // regresa
-                        onBackPressed()
                         Toast.makeText(this, "Se actualizó su información", Toast.LENGTH_SHORT).show()
                     }
                     .addOnFailureListener { e ->

@@ -47,7 +47,7 @@ class MainActivityR : AppCompatActivity(){
                 drawerLayout.openDrawer(GravityCompat.START)
             }
         }
-        verFragmentFiltrar()
+        verFragmentMisOfertas()
 
 
         binding.BottonNV!!.setOnItemSelectedListener { item ->
