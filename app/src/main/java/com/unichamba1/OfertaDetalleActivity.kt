@@ -9,6 +9,7 @@ import android.view.MenuItem
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.content.ContextCompat
@@ -51,9 +52,7 @@ class OfertaDetalleActivity : AppCompatActivity() {
             // Si el usuario está autenticado, habilita el botón "Aplicar"
             btnApply.isEnabled = true
         } else {
-            val customMessage = "Debes ser estudiante para aplicar a esta oferta!"
-            val customToast = CustomToast(this, customMessage)
-            customToast.show()
+            Toast.makeText(this, "Debes ser estudiante para aplicar a esta oferta!", Toast.LENGTH_SHORT).show()
             btnApply.isEnabled = false
         }
 
