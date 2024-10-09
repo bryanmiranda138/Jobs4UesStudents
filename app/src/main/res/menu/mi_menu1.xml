@@ -8,6 +8,12 @@
         />
 
     <item
+        android:id="@+id/Item_Mis_Anuncios_Publicados"
+        android:title="@string/Item_Anuncios_Publicados"
+        android:icon="@drawable/maletin"
+        />
+
+    <item
         android:id="@+id/Item_Mis_Ofertas"
         android:title="@string/Item_Mis_Ofertas"
         android:icon="@drawable/ic_mis_ofertas"

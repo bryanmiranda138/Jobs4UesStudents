@@ -18,6 +18,7 @@ import android.widget.Toast
 import androidx.core.view.GravityCompat
 import com.unichamba1.Fragmentos.FragmentJovenes
 import com.unichamba1.Fragmentos.FragmentMisOfertas
+import com.unichamba1.Fragmentos.Mis_Anuncios_Publicados_Fragment
 import com.unichamba1.databinding.ActivityMainRBinding
 
 
@@ -47,7 +48,7 @@ class MainActivityR : AppCompatActivity(){
                 drawerLayout.openDrawer(GravityCompat.START)
             }
         }
-        verFragmentMisOfertas()
+        verFragmentNuevaOfertaR()
 
 
         binding.BottonNV!!.setOnItemSelectedListener { item ->
@@ -59,6 +60,11 @@ class MainActivityR : AppCompatActivity(){
 
                 R.id.Item_Publicar_Oferta-> {
                     comprobarSesion()
+                    true
+                }
+
+                R.id.Item_Mis_Anuncios_Publicados -> {
+                    verFragmentMisAnunciosPublicados()
                     true
                 }
 
@@ -184,6 +190,14 @@ class MainActivityR : AppCompatActivity(){
         val fragment = FragmentJovenes()
         val fragmentTransition = supportFragmentManager.beginTransaction()
         fragmentTransition.replace(binding.FragmentL1!!.id, fragment, "FragmentFiltral")
+        fragmentTransition.commit()
+    }
+
+    private fun verFragmentMisAnunciosPublicados() {
+        binding.TituloRL!!.text = "Mis Anuncios"
+        val fragment = Mis_Anuncios_Publicados_Fragment()//FragmentMisOfertas()
+        val fragmentTransition = supportFragmentManager.beginTransaction()
+        fragmentTransition.replace(binding.FragmentL1!!.id, fragment, "FragmentMisAnuncios")
         fragmentTransition.commit()
     }
 

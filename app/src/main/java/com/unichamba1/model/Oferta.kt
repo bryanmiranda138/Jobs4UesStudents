@@ -1,6 +1,7 @@
 package com.unichamba1.model
 
 data class Oferta(
+    var id: String="",
     val description: String = "",
     val imagen: String = "",
     val quienPublica: String = "",
@@ -9,6 +10,7 @@ data class Oferta(
     val carrera: List<String> = listOf() ,// Lista vacía por defecto
     val direction: String = ""
 ) {
+
 
 }
 

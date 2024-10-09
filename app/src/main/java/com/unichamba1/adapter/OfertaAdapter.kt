@@ -4,6 +4,7 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import androidx.recyclerview.widget.RecyclerView
 import com.unichamba1.OfertaDetalleActivity
 import com.unichamba1.R
@@ -16,7 +17,6 @@ class OfertaAdapter(private var ofertas: List<Oferta>) : RecyclerView.Adapter<Of
     private var originalOfertas: List<Oferta> = ofertas
 
     inner class OfertaViewHolder(val binding: ItemOfertaBinding) : RecyclerView.ViewHolder(binding.root), View.OnClickListener {
-
         init {
             binding.root.setOnClickListener(this)
         }
