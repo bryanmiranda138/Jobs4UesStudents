@@ -11,6 +11,7 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.content.ContextCompat
@@ -132,20 +133,38 @@ class OfertaDetalleActivity : AppCompatActivity() {
 
         // Referencia a Firestore
         val db = FirebaseFirestore.getInstance()
-
-        // Eliminar el documento/anuncio
-        anuncioId?.let {
-            db.collection("anuncios").document(it)
-                .delete()
-                .addOnSuccessListener {
-                    Toast.makeText(this, "Anuncio eliminado con éxito", Toast.LENGTH_SHORT).show()
-                    // Redirigir o finalizar la actividad según sea necesario
-                    finish() // Cierra la actividad actual y regresa a la anterior
-                }
-                .addOnFailureListener { e ->
-                    Toast.makeText(this, "Error al eliminar el anuncio: ${e.message}", Toast.LENGTH_SHORT).show()
-                }
+        // Mostrar una ventana de confirmación antes de eliminar el anuncio
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Confirmar eliminación")
+        builder.setMessage("¿Estás seguro de que deseas eliminar este anuncio?")
+        // Configurar el botón "Sí"
+        builder.setPositiveButton("Sí") { dialog, _ ->
+            // Eliminar el documento/anuncio
+            anuncioId?.let {
+                db.collection("anuncios").document(it)
+                    .delete()
+                    .addOnSuccessListener {
+                        Toast.makeText(this, "Anuncio eliminado con éxito", Toast.LENGTH_SHORT)
+                            .show()
+                        finish() // Cierra la actividad actual y regresa a la anterior
+                    }
+                    .addOnFailureListener { e ->
+                        Toast.makeText(
+                            this,
+                            "Error al eliminar el anuncio: ${e.message}",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
+            }
+            dialog.dismiss()
         }
+        // Configurar el botón "No"
+        builder.setNegativeButton("No") { dialog, _ ->
+            dialog.dismiss() // Cerrar el diálogo sin hacer nada
+        }
+
+        // Mostrar el diálogo
+        builder.create().show()
     }
 
 
