@@ -79,6 +79,11 @@ class MainActivityR : AppCompatActivity(){
             }
 
         }
+        // Verifica si se debe mostrar FragmentInicio
+        if (intent.getBooleanExtra("mostrarFragmentNuevaOferta", false)) {
+            comprobarSesion()
+        }
+
         navView.setNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.Item_sitio1 -> {

@@ -116,17 +116,15 @@
             android:backgroundTint="#1AD361"
             android:textStyle="bold" />
     </LinearLayout>
-    <ImageButton
+    <Button
         android:id="@+id/btnEliminarAnuncio"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="102dp"
+        android:layout_height="60dp"
+        android:text="Eliminar"
         android:layout_gravity="center"
-        android:layout_marginTop="10dp"
-        android:layout_marginStart="350dp"
-        android:backgroundTint="@color/carmesi"
-        android:scaleType="centerInside"
-        android:src="@drawable/basura"
-        android:contentDescription="Eliminar Anuncio"
-        app:tint="@color/white" />
-
+        android:layout_marginTop="2dp"
+        android:layout_marginStart="300dp"
+        android:backgroundTint="@color/black"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold" />
 </RelativeLayout>

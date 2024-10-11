@@ -70,6 +70,19 @@ class OfertaDetalleActivity : AppCompatActivity() {
             btnApply.isEnabled = false
         }
 
+        // Obtén el correo del publicador de la oferta
+        val quienPublicaEmail = intent.getStringExtra(EXTRA_quienPublica) ?: ""
+
+        // Comprueba si el usuario logueado es distinto al publicador de la oferta
+        if (userEmail != quienPublicaEmail) {
+            // Si es distinto, oculta el botón de eliminar anuncio
+            btnEliminarAnuncio.visibility = View.GONE
+        } else {
+            // Si coincide, asegúrate de mostrar el botón
+            btnEliminarAnuncio.visibility = View.VISIBLE
+        }
+
+
         val description: TextView = findViewById(R.id.description)
         val quienPublica: TextView = findViewById(R.id.quienPublica)
         val carrera: TextView = findViewById(R.id.carrera)
