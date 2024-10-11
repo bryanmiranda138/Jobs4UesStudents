@@ -144,16 +144,11 @@ class OfertaDetalleActivity : AppCompatActivity() {
                 db.collection("anuncios").document(it)
                     .delete()
                     .addOnSuccessListener {
-                        Toast.makeText(this, "Anuncio eliminado con éxito", Toast.LENGTH_SHORT)
-                            .show()
+                        Toast.makeText(this, "Anuncio eliminado con éxito", Toast.LENGTH_SHORT).show()
                         finish() // Cierra la actividad actual y regresa a la anterior
                     }
                     .addOnFailureListener { e ->
-                        Toast.makeText(
-                            this,
-                            "Error al eliminar el anuncio: ${e.message}",
-                            Toast.LENGTH_SHORT
-                        ).show()
+                        Toast.makeText(this, "Error al eliminar el anuncio: ${e.message}", Toast.LENGTH_SHORT).show()
                     }
             }
             dialog.dismiss()

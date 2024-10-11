@@ -37,7 +37,6 @@ class MainActivityR : AppCompatActivity(){
         firebaseAuth = FirebaseAuth.getInstance()
 
 
-
         drawerLayout = findViewById(R.id.drawer_layout)
         val navView = findViewById<NavigationView>(R.id.mi_menu2)
         val hamburgerButton = findViewById<ImageButton>(R.id.btnBack)
