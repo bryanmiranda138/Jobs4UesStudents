@@ -2,6 +2,7 @@ package com.unichamba1.Fragmentos
 
 import android.app.Activity
 import android.app.ProgressDialog
+import android.content.ContentValues.TAG
 import android.content.Intent
 import android.graphics.Bitmap
 import android.net.Uri
@@ -9,6 +10,7 @@ import android.os.Bundle
 import android.provider.MediaStore
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -255,7 +257,18 @@ class FragmentNuevaOferta : Fragment() {
 
                 db.collection("anuncios")
                     .add(anuncio)
-                    .addOnSuccessListener {
+                    .addOnSuccessListener {documentReference ->
+                        // Aquí se obtiene el ID del documento recién creado
+                        val documentId = documentReference.id
+                        // Opcional: Actualizar el documento para incluir el ID dentro de sus campos
+                        db.collection("anuncios").document(documentId)
+                            .update("id", documentId)
+                            .addOnSuccessListener {
+                                Log.d(TAG, "DocumentSnapshot successfully updated with ID")
+                            }
+                            .addOnFailureListener { e ->
+                                Log.w(TAG, "Error updating document", e)
+                            }
                         progressDialog.dismiss()
                         Toast.makeText(context, "Oferta publicada con éxito", Toast.LENGTH_SHORT).show()
                         descriptionEditText.text.clear()

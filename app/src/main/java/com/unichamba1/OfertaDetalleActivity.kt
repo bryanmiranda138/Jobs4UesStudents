@@ -18,6 +18,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import com.unichamba1.JovenesDetalleActivity.Companion.EXTRA_ID
 import com.unichamba1.adapter.OfertaAdapter
 import com.unichamba1.model.Oferta
 import java.net.URLEncoder
@@ -27,8 +28,10 @@ class OfertaDetalleActivity : AppCompatActivity() {
     private lateinit var mAuth: FirebaseAuth
     private lateinit var btnApply: Button
     private lateinit var quienPublicaText: String // Variable para almacenar el correo del publicador
+    private lateinit var btnEliminarAnuncio: Button
 
     companion object {
+        const val EXTRA_ID = "extra_id"
         const val EXTRA_quienPublica = "extra_quienPublica"
         const val EXTRA_TELEFONO = "extra_telefono"
         const val EXTRA_DESCRIPTION = "extra_description"
@@ -45,6 +48,12 @@ class OfertaDetalleActivity : AppCompatActivity() {
         toolbar.title = "Detalles de oferta"
         toolbar.setTitleTextColor(ContextCompat.getColor(this, R.color.white))
         setSupportActionBar(toolbar)
+
+        // Inicialización y configuración del botón
+        btnEliminarAnuncio = findViewById(R.id.btnEliminarAnuncio)
+        btnEliminarAnuncio.setOnClickListener {
+            eliminarAnuncio()
+        }
 
         // Inicializa Firebase Authentication
         mAuth = FirebaseAuth.getInstance()
@@ -103,6 +112,29 @@ class OfertaDetalleActivity : AppCompatActivity() {
             it.endsWith("@ues.edu.sv") && !it.substringBefore("@ues.edu.sv").contains(".")
         } ?: false
     }
+
+    private fun eliminarAnuncio() {
+        // Obtener el ID del anuncio que se desea eliminar
+        val anuncioId = intent.getStringExtra(EXTRA_ID) // Asegúrate de que estás pasando el ID del anuncio como un extra en el Intent
+
+        // Referencia a Firestore
+        val db = FirebaseFirestore.getInstance()
+
+        // Eliminar el documento/anuncio
+        anuncioId?.let {
+            db.collection("anuncios").document(it)
+                .delete()
+                .addOnSuccessListener {
+                    Toast.makeText(this, "Anuncio eliminado con éxito", Toast.LENGTH_SHORT).show()
+                    // Redirigir o finalizar la actividad según sea necesario
+                    finish() // Cierra la actividad actual y regresa a la anterior
+                }
+                .addOnFailureListener { e ->
+                    Toast.makeText(this, "Error al eliminar el anuncio: ${e.message}", Toast.LENGTH_SHORT).show()
+                }
+        }
+    }
+
 
    private fun openWhatsApp() {
 
