@@ -8,6 +8,7 @@ import android.util.Log
 import android.view.MenuItem
 import android.view.View
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
@@ -29,7 +30,7 @@ class OfertaDetalleActivity : AppCompatActivity() {
     private lateinit var mAuth: FirebaseAuth
     private lateinit var btnApply: Button
     private lateinit var quienPublicaText: String // Variable para almacenar el correo del publicador
-    private lateinit var btnEliminarAnuncio: Button
+    private lateinit var btnEliminarAnuncio: ImageButton
 
     companion object {
         const val EXTRA_ID = "extra_id"

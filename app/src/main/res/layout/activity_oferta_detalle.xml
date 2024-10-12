@@ -116,7 +116,21 @@
             android:backgroundTint="#1AD361"
             android:textStyle="bold" />
     </LinearLayout>
-    <Button
+
+    <ImageButton
+        android:id="@+id/btnEliminarAnuncio"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="290dp"
+        android:layout_marginTop="5dp"
+        android:backgroundTint="@color/carmesi"
+        android:contentDescription="Eliminar Anuncio"
+        android:scaleType="centerInside"
+        android:src="@drawable/basura"
+        app:tint="@color/white"
+        tools:ignore="HardcodedText" />
+    <!--<Button
         android:id="@+id/btnEliminarAnuncio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -126,5 +140,5 @@
         android:layout_marginStart="250dp"
         android:backgroundTint="@color/black"
         android:textColor="#FFFFFF"
-        android:textStyle="bold" />
+        android:textStyle="bold" />-->
 </RelativeLayout>
