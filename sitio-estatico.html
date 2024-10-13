@@ -39,8 +39,9 @@
 
     .navbar {
         display: flex;
-        flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
-        justify-content: space-between;
+        flex-wrap: wrap;
+        /* Permite que los elementos se envuelvan en pantallas pequeñas */
+        justify-content: center;
         align-items: center;
         max-width: 1200px;
         margin: 0 auto;
@@ -55,7 +56,8 @@
     .nav-links {
         list-style: none;
         display: flex;
-        flex-wrap: wrap; /* Permite que los enlaces se envuelvan */
+        flex-wrap: wrap;
+        /* Permite que los enlaces se envuelvan */
     }
 
     .nav-links li {
@@ -93,56 +95,63 @@
     }
 
     .carrusel-container {
-    position: relative;
-    width: 900px; /* Ancho para tres imágenes de 300px */
-    height: 600px; /* Alto fijo */
-    margin: 20px auto;
-    overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-}
+        position: relative;
+        width: 100%;
+        /* Cambiado a 100% para hacer la imagen responsiva */
+        max-width: 300px;
+        /* Ancho máximo para la imagen */
+        height: 600px;
+        /* Alto fijo */
+        margin: 20px auto;
+        overflow: hidden;
+        border-radius: 10px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    }
 
-.carrusel {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-    height: 100%;
-}
+    .carrusel {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+        height: 100%;
+    }
 
-.slide {
-    min-width: 300px; /* Ancho fijo para cada imagen */
-    height: 100%;
-}
+    .slide {
+        min-width: 100%;
+        /* Cada slide ocupa el 100% del contenedor */
+        height: 100%;
+    }
 
-.slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 10px;
-}
+    .slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+    }
 
-.prev, .next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    padding: 10px;
-    border-radius: 50%;
-    cursor: pointer;
-    user-select: none;
-}
+    .prev,
+    .next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        padding: 10px;
+        border-radius: 50%;
+        cursor: pointer;
+        user-select: none;
+    }
 
-.prev {
-    left: 10px;
-}
+    .prev {
+        left: 10px;
+    }
 
-.next {
-    right: 10px;
-}
+    .next {
+        right: 10px;
+    }
 
-.prev:hover, .next:hover {
-    background-color: rgba(0, 0, 0, 0.7);
-}
+    .prev:hover,
+    .next:hover {
+        background-color: rgba(0, 0, 0, 0.7);
+    }
 
 
     .card {
@@ -190,7 +199,8 @@
         color: #fff;
         text-align: center;
         padding: 10px 0;
-        position: relative; /* Cambiado a relative para que no esté fijo */
+        position: relative;
+        /* Cambiado a relative para que no esté fijo */
         width: 100%;
     }
 
@@ -247,34 +257,44 @@
     /* Media Queries para Responsividad */
     @media (max-width: 768px) {
         .nav-links {
-            flex-direction: column; /* Coloca los enlaces en columna en pantallas pequeñas */
-            align-items: center; /* Centra los enlaces */
-            margin-top: 10px; /* Margen superior para separación */
+            flex-direction: column;
+            /* Coloca los enlaces en columna en pantallas pequeñas */
+            align-items: center;
+            /* Centra los enlaces */
+            margin-top: 10px;
+            /* Margen superior para separación */
         }
 
         .nav-links li {
-            margin-left: 0; /* Elimina margen izquierdo en pantallas pequeñas */
-            margin-bottom: 10px; /* Añade separación entre enlaces */
+            margin-left: 0;
+            /* Elimina margen izquierdo en pantallas pequeñas */
+            margin-bottom: 10px;
+            /* Añade separación entre enlaces */
         }
 
         .carrusel-container {
-            height: 300px; /* Ajusta la altura del carrusel en pantallas pequeñas */
+            height: 300px;
+            /* Ajusta la altura del carrusel en pantallas pequeñas */
         }
 
         .vista h1 {
-            font-size: 24px; /* Tamaño de fuente más pequeño para encabezados */
+            font-size: 24px;
+            /* Tamaño de fuente más pequeño para encabezados */
         }
 
         .vista p {
-            font-size: 16px; /* Tamaño de fuente más pequeño para párrafos */
+            font-size: 16px;
+            /* Tamaño de fuente más pequeño para párrafos */
         }
 
         .card h2 {
-            font-size: 20px; /* Tamaño de fuente más pequeño para los encabezados de la card */
+            font-size: 20px;
+            /* Tamaño de fuente más pequeño para los encabezados de la card */
         }
 
         .card p {
-            font-size: 14px; /* Tamaño de fuente más pequeño para los párrafos de la card */
+            font-size: 14px;
+            /* Tamaño de fuente más pequeño para los párrafos de la card */
         }
     }
 </style>
@@ -300,8 +320,8 @@
         <section id="inicio" class="vista">
             <h1>¡¡¡ Bienvenido a Jobs4UesStudents App !!!</h1>
             <div class="logo"></div>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Kotlin_Icon.png/1200px-Kotlin_Icon.png"
-                    alt="Logo" class="logo-img">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Kotlin_Icon.png/1200px-Kotlin_Icon.png"
+                alt="Logo" class="logo-img">
             </div>
             <br>
             <br>
@@ -367,7 +387,8 @@
                         <b class="v1">2. Tener :</b> Tener 18 años cumplidos o más.
                         <br>
                         <br>
-                        <b class="v1">3. Uso Adecuado:</b> Se compromete a utilizar nuestro servicio solo con fines legales
+                        <b class="v1">3. Uso Adecuado:</b> Se compromete a utilizar nuestro servicio solo con fines
+                        legales
                         y de
                         acuerdo con estos términos y condiciones.
                         <br>
@@ -377,18 +398,22 @@
                         Política de Privacidad.
                         <br>
                         <br>
-                        <b class="v1">5. Modificaciones de los Términos:</b> Nos reservamos el derecho de modificar estos
+                        <b class="v1">5. Modificaciones de los Términos:</b> Nos reservamos el derecho de modificar
+                        estos
                         términos en cualquier momento.
                         <br>
                         <br>
-                        <b class="v1">6. Limitación de Responsabilidad:</b> No seremos responsables de ningún daño directo,
-                        indirecto, incidental, especial, consecuente o ejemplar que resulte del uso o la imposibilidad de
+                        <b class="v1">6. Limitación de Responsabilidad:</b> No seremos responsables de ningún daño
+                        directo,
+                        indirecto, incidental, especial, consecuente o ejemplar que resulte del uso o la imposibilidad
+                        de
                         uso
                         del
                         servicio.
                         <br>
                         <br>
-                        <b class="v1">7. Cancelación y Terminación:</b> Nos reservamos el derecho de cancelar o suspender su
+                        <b class="v1">7. Cancelación y Terminación:</b> Nos reservamos el derecho de cancelar o
+                        suspender su
                         acceso al servicio en cualquier momento, sin previo aviso, por cualquier motivo, incluyendo, sin
                         limitación, el
                         incumplimiento de estos términos y condiciones.
@@ -396,15 +421,18 @@
                         <br>
                         <b class="v1">8. Uso de la Cámara del Dispositivo:</b> Al utilizar nuestro servicio, puede
                         permitirnos
-                        acceder a la cámara de su dispositivo móvil. Cualquier imagen o video capturado a través de nuestra
+                        acceder a la cámara de su dispositivo móvil. Cualquier imagen o video capturado a través de
+                        nuestra
                         aplicación será
                         recopilado y utilizado de acuerdo con nuestra Política de Privacidad. Usted es responsable de
                         garantizar
                         que el uso de la cámara no infrinja los derechos de privacidad de terceros.
                         <br>
                         <br>
-                        <b class="v1">9. Consentimiento para el Uso de Datos de la Cámara:</b> Al habilitar el acceso a la
-                        cámara de su dispositivo, usted consiente la recopilación, almacenamiento y uso de imágenes y videos
+                        <b class="v1">9. Consentimiento para el Uso de Datos de la Cámara:</b> Al habilitar el acceso a
+                        la
+                        cámara de su dispositivo, usted consiente la recopilación, almacenamiento y uso de imágenes y
+                        videos
                         según se
                         describe en nuestra Política de Privacidad. Puede desactivar el acceso a la cámara en cualquier
                         momento
