@@ -76,19 +76,19 @@ class MainActivity2 : AppCompatActivity(),FragmentInicio.OnVerOfertasClickListen
         navView.setNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.Item_sitio -> {
-                    abrirSitioWeb("https://www.unichamba.com/")
+                    abrirSitioWeb("https://bryanmiranda138.github.io/Jobs4UesStudentsSite/")
                     true
                 }
 
 
                 R.id.Item_Terminos -> {
-                    abrirSitioWeb("https://website-unichamba.netlify.app/policy")
+                    abrirSitioWeb("https://bryanmiranda138.github.io/Jobs4UesStudentsSite/")
                     drawerLayout.closeDrawer(GravityCompat.START)
                     true
                   }
 
                 R.id.Item_Quienes_Somos -> {
-                    abrirSitioWeb("https://website-unichamba.netlify.app/details")
+                    abrirSitioWeb("https://bryanmiranda138.github.io/Jobs4UesStudentsSite/")
                     drawerLayout.closeDrawer(GravityCompat.START)
                     true
                 }
