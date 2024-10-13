@@ -85,7 +85,7 @@ class MainActivity2 : AppCompatActivity(),FragmentInicio.OnVerOfertasClickListen
                     abrirSitioWeb("https://website-unichamba.netlify.app/policy")
                     drawerLayout.closeDrawer(GravityCompat.START)
                     true
-                }
+                  }
 
                 R.id.Item_Quienes_Somos -> {
                     abrirSitioWeb("https://website-unichamba.netlify.app/details")

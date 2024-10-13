@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/Item_sitio1"
-        android:title="Version Web"
+        android:title="Sitio Web"
         android:icon="@drawable/computer"
         android:clickable="true"/>
 
