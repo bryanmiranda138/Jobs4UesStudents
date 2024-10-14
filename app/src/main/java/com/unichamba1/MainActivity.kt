@@ -93,13 +93,13 @@ class MainActivity : AppCompatActivity(),FragmentInicio.OnVerOfertasClickListene
 
 
                 R.id.Item_Terminos -> {
-                    abrirSitioWeb("https://bryanmiranda138.github.io/Jobs4UesStudentsSite/")
+                    abrirSitioWeb("https://bryanmiranda138.github.io/Jobs4UesStudentsSite/terminosycondiciones/")
                     drawerLayout.closeDrawer(GravityCompat.START)
                     true
                 }
 
                 R.id.Item_Quienes_Somos -> {
-                    abrirSitioWeb("https://bryanmiranda138.github.io/Jobs4UesStudentsSite/")
+                    abrirSitioWeb("https://bryanmiranda138.github.io/Jobs4UesStudentsSite/quienessomos/")
                     drawerLayout.closeDrawer(GravityCompat.START)
                     true
                 }

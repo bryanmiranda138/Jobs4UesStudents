@@ -91,13 +91,13 @@ class MainActivityR : AppCompatActivity(){
                 }
 
                 R.id.Item_Terminos1 -> {
-                    abrirSitioWeb("https://bryanmiranda138.github.io/Jobs4UesStudentsSite/")
+                    abrirSitioWeb("https://bryanmiranda138.github.io/Jobs4UesStudentsSite/terminosycondiciones/")
                     drawerLayout.closeDrawer(GravityCompat.START)
                     true
                 }
 
                 R.id.Item_Quienes_Somos1 -> {
-                    abrirSitioWeb("https://bryanmiranda138.github.io/Jobs4UesStudentsSite/")
+                    abrirSitioWeb("https://bryanmiranda138.github.io/Jobs4UesStudentsSite/quienessomos/")
                     drawerLayout.closeDrawer(GravityCompat.START)
                     true
                 }
