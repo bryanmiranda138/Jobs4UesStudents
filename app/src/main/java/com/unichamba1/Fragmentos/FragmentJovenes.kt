@@ -181,7 +181,7 @@ class FragmentJovenes : Fragment() {
 
     private fun obtenerCheckBoxesFromFirebase(navView: NavigationView) {
         val menu = navView.menu
-        val carrerasRef = FirebaseFirestore.getInstance().collection("carreras")
+        val carrerasRef = FirebaseFirestore.getInstance().collection("carrerasF")
         val trabajosRef = FirebaseFirestore.getInstance().collection("trabajos")
         val municipiosRef = FirebaseFirestore.getInstance().collection("municipios")
 
