@@ -47,7 +47,7 @@ class MainActivity2 : AppCompatActivity(),FragmentInicio.OnVerOfertasClickListen
         verFragmentInicio()
 
 
-        binding.BottonNV!!.setOnItemSelectedListener { item ->
+        binding.BottonNV.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.Item_Inicio -> {
                     verFragmentInicio()
@@ -63,10 +63,6 @@ class MainActivity2 : AppCompatActivity(),FragmentInicio.OnVerOfertasClickListen
                     verFragmentMisOfertas()
                     true
                 }
-                R.id.Item_Cuenta -> {
-                    verFragmentChats()
-                    true
-                }
                 else -> {
                     false
                 }
@@ -75,19 +71,19 @@ class MainActivity2 : AppCompatActivity(),FragmentInicio.OnVerOfertasClickListen
         }
         navView.setNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
-                R.id.Item_sitio -> {
-                    abrirSitioWeb("https://bryanmiranda138.github.io/Jobs4UesStudentsSite/")
+                R.id.Item_sitio1 -> {
+                    abrirSitioWeb("https://bryanmiranda138.github.io/Jobs4UesStudentsSite/index.html")
                     true
                 }
 
 
-                R.id.Item_Terminos -> {
+                R.id.Item_Terminos1 -> {
                     abrirSitioWeb("https://bryanmiranda138.github.io/Jobs4UesStudentsSite/terminosycondiciones/")
                     drawerLayout.closeDrawer(GravityCompat.START)
                     true
                   }
 
-                R.id.Item_Quienes_Somos -> {
+                R.id.Item_Quienes_Somos1 -> {
                     abrirSitioWeb("https://bryanmiranda138.github.io/Jobs4UesStudentsSite/quienessomos/")
                     drawerLayout.closeDrawer(GravityCompat.START)
                     true
