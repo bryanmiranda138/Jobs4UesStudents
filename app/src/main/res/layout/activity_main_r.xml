@@ -45,7 +45,7 @@
                     android:layout_marginTop="5dp"
                     android:layout_marginEnd="5dp"
                     android:layout_marginBottom="5dp"
-                    android:src="@mipmap/ic_beta" />
+                    android:src="@mipmap/logo_final" />
 
                 <ImageButton
 

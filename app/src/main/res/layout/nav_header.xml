@@ -12,6 +12,6 @@
         android:id="@+id/imageViewHeader"
         android:layout_width="match_parent"
         android:layout_height="150dp"
-        android:src="@drawable/icono_prueba" />
+        android:src="@drawable/logo_final" />
 
 </androidx.cardview.widget.CardView>

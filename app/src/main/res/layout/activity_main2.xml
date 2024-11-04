@@ -36,7 +36,7 @@
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentBottom="true"
                 android:layout_margin="5dp"
-                android:src="@mipmap/ic_beta" />
+                android:src="@mipmap/logo_final" />
 
             <ImageButton
                 android:id="@+id/btnBack"
