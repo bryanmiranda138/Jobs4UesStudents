@@ -43,7 +43,7 @@
 
          <ImageView
              android:layout_marginTop="5pt"
-             android:src="@drawable/signin"
+             android:src="@drawable/signin3"
              android:layout_width="150dp"
              android:layout_height="150dp"
              />
