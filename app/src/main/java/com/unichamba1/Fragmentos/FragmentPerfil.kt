@@ -107,7 +107,7 @@ class FragmentPerfil : AppCompatActivity() {
     }
 
     private fun inicializarSpinnerCarreras() {
-        firestore.collection("carreras")
+        firestore.collection("carrerasF")
             .get()
             .addOnSuccessListener { result ->
                 val carreras = result.documents.mapNotNull { it.getString("carrera") }
